@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>todo list for myself</title>
+		<meta name="description" content="todo list for myself" />
+	</head>
+	<body>
+		<div>
+			<form action="." method="post">
+				<label for="title">todo list</label>
+				<input type="text" id="title" name="task" placeholder="add task" required="required" autocomplete="off" />
+			</form>
+		</div>
+		<div>
+			<form action="." method="post">
+				<div>todo list</div>
+				{% for todo in todo_list %}
+					<input type="submit" name="change" value="{{ todo['name'] }}">
+					<br />
+				{% endfor %}
+			</form>
+		</div>
+		<div>
+			<form action="." method="post">
+				<div>done list</div>
+				{% for done in done_list %}
+					<input type="submit" name="change" value="{{ done['name'] }}">
+					<br />
+				{% endfor %}
+			</form>
+		</div>
+	</body>
+</html>
